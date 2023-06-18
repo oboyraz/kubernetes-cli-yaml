@@ -1,0 +1,10 @@
+apiVersion: v1
+kind: ResourceQuota
+metadata:
+  name: demo-cpu-quota
+  namespace: dev
+spec: 
+  hard:
+    requests.cpu: "200m"
+    limits.cpu: "300m" # dev ortamı için max çıkılabiecek memory size cpu için 300mb ayarlandı
+

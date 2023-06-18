@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: ReplicaSet
+metadata:
+  name: poyraz-replicas
+  labels:
+    app: poyrazapp
+    type: front-end
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: poyrazapp
+  template:
+    metadata:
+      name: poyraz2app
+      labels:
+        app: poyrazapp
+    spec:
+      containers:
+        - name: poyrazapp-container
+          image: nginx
+          ports:
+            - containerPort: 80
