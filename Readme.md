@@ -137,3 +137,23 @@ kubectl create namespace dev
 kubectl create namespace test
 
 Bu komutlar ile dev, test ve production ortamları tek bir cluster üzerinde birbirinden izole ortamlar oluşturulur.
+
+## minikube service:
+
+minikube service tomcat-deployment --url
+
+minikube service komutu, yerel bir Kubernetes kümesindeki bir servisi dış dünyaya açmak ve servisin URL'sini almak için kullanılır. İstediğiniz komutu kullanarak tomcat-deployment adlı bir servisin URL'sini alabilirsiniz. Bu komut çalıştırıldığında, tomcat-deployment adlı servis için bir URL döndürülür. Bu URL, servise erişmek için kullanabileceğiniz dışarıdan erişilebilir bir adresi temsil eder.
+
+## kubectl set image:
+
+kubectl set image deployment/tomcat-deployment tomcat=tomcat:8.0
+
+kubectl set image komutu, Kubernetes ortamında bir dağıtımın içindeki bir konteynerin görüntüsünü güncellemek için kullanılır.
+
+İşte komutun parçalarının anlamları:
+
+set image: Bu, komutun "görüntüyü ayarla" eylemini gerçekleştireceğini belirtir.
+deployment/tomcat-deployment: Bu, güncellemeyi yapmak istediğiniz dağıtımın adını belirtir. deployment/ ön eki, bu kaynağın bir dağıtım olduğunu belirtir.
+tomcat: Bu, güncellemek istediğiniz konteynerin adını belirtir.
+tomcat:8.0: Bu, konteynerin güncellenmiş görüntüsünü belirtir. tomcat adlı konteynerin 8.0 sürümünü kullanmak istediğinizi gösterir.
+Bu komut, belirtilen dağıtımda bulunan bir konteynerin görüntüsünü günceller. Yeni bir görüntü belirtilerek, uygulama veya hizmetin yeni bir sürümünü dağıtabilir veya mevcut bir sürümü güncelleyebilirsiniz. Görüntü güncellemesi yapıldığında, Kubernetes dağıtımı otomatik olarak yeni görüntüyü kullanarak konteynerleri yeniden başlatır ve uygulamanın güncellenmiş sürümünü çalıştırır.
