@@ -91,7 +91,7 @@ Bu komut, "nginx-deployment" deployment'ının YAML tanımını düzenler. Bir m
 ## kubectl rollout status:
 
 ```bash
->kubectl rollout status deployment/nginx-deployment
+kubectl rollout status deployment/nginx-deployment
 ```
 Bu komut, "nginx-deployment" deployment'ının güncelleme durumunu takip eder. Güncelleme işleminin tamamlanıp tamamlanmadığını veya hala devam edip etmediğini kontrol etmenize olanak sağlar.
 
